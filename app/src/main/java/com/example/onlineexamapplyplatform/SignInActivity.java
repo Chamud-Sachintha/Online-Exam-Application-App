@@ -14,7 +14,7 @@ import com.example.onlineexamapplyplatform.service.AuthService;
 
 public class SignInActivity extends AppCompatActivity {
 
-    private AuthService authService;
+    public AuthService authService = new AuthService();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

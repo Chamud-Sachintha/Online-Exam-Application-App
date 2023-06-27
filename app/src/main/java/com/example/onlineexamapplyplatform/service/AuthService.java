@@ -12,7 +12,7 @@ public class AuthService {
                 return false;
             }
         } catch (Exception e) {
-            throw new Exception("There is an Error Occur");
+            throw new Exception("There is an Error Occur" + e.getMessage());
         }
     }
 }
