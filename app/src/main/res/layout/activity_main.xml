@@ -34,7 +34,7 @@
             app:layout_constraintVertical_bias="0.103" />
 
         <EditText
-            android:id="@+id/textView2"
+            android:id="@+id/usernameTxt"
             android:layout_width="392dp"
             android:layout_height="49dp"
             android:background="@color/material_dynamic_neutral95"
@@ -50,7 +50,7 @@
             app:layout_constraintVertical_bias="0.129" />
 
         <EditText
-            android:id="@+id/textView3"
+            android:id="@+id/emailTxt"
             android:layout_width="392dp"
             android:layout_height="49dp"
             android:background="@color/material_dynamic_neutral95"
@@ -66,11 +66,12 @@
             app:layout_constraintVertical_bias="0.254" />
 
         <EditText
-            android:id="@+id/textView4"
+            android:id="@+id/passwordTxt"
             android:layout_width="392dp"
             android:layout_height="49dp"
             android:background="@color/material_dynamic_neutral95"
-            android:hint="Email Address"
+            android:hint="Password"
+            android:inputType="textPassword"
             android:paddingStart="10sp"
             android:textColor="#000000"
             android:textColorHint="#000000"
@@ -82,12 +83,13 @@
             app:layout_constraintVertical_bias="0.381" />
 
         <EditText
-            android:id="@+id/textView5"
+            android:id="@+id/confPassTxt"
             android:layout_width="392dp"
             android:layout_height="49dp"
             android:background="@color/material_dynamic_neutral95"
-            android:hint="Email Address"
+            android:hint="Confirm Password"
             android:paddingStart="10sp"
+            android:inputType="textPassword"
             android:textColor="#000000"
             android:textColorHint="#000000"
             app:layout_constraintBottom_toBottomOf="parent"
@@ -98,7 +100,7 @@
             app:layout_constraintVertical_bias="0.504" />
 
         <Button
-            android:id="@+id/button"
+            android:id="@+id/registerBtn"
             android:layout_width="392dp"
             android:layout_height="49dp"
             android:text="Button"
@@ -106,7 +108,7 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.526"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/textView5"
+            app:layout_constraintTop_toBottomOf="@+id/confPassTxt"
             app:layout_constraintVertical_bias="0.124" />
 
         <TextView
@@ -131,7 +133,7 @@
             android:layout_height="52dp"
             android:layout_marginBottom="112dp"
             android:text="Sign In"
-            android:onClick="goToActivity2"
+            android:onClick="goToSigninActivity"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.536"
