@@ -7,6 +7,7 @@ import static com.example.onlineexamapplyplatform.util.DBHelper.MEMBER_DETAILS_T
 
 import android.content.ContentValues;
 import android.content.Context;
+import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 
@@ -16,9 +17,23 @@ import com.example.onlineexamapplyplatform.util.DBHelper;
 
 public class AuthService {
 
-    public boolean checkMemberLoginCredentials(Member memberDTO) throws Exception {
+    public boolean checkMemberLoginCredentials(Member memberDTO, Context context) throws Exception {
         try {
-            if (memberDTO.getMemberEmail().equals("test@gmail.com") && memberDTO.getPassword().equals("123")) {
+            SQLiteDatabase db = (new DBHelper(context)).getReadableDatabase();
+            String sql = "SELECT * FROM " + MEMBER_DETAILS_TABLE + " WHERE USERNAME = '"+memberDTO.getUsername()+"' OR EMAIL_ADDRESS = '"+memberDTO.getMemberEmail()+"'";
+
+            Cursor cursor = db.rawQuery(sql, null);
+            String memberPassword = null;
+
+            if (cursor.moveToFirst()) {
+                do {
+                    memberPassword = cursor.getString(3);
+                } while (cursor.moveToNext());
+            }
+
+            cursor.close();
+
+            if (memberPassword.equals(memberDTO.getPassword())) {
                 return true;
             } else {
                 return false;

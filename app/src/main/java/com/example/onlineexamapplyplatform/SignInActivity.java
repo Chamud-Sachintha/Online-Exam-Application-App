@@ -3,6 +3,7 @@ package com.example.onlineexamapplyplatform;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.EditText;
@@ -30,8 +31,11 @@ public class SignInActivity extends AppCompatActivity {
         memberDTO.setMemberEmail(userEmail.getText().toString());
         memberDTO.setPassword(password.getText().toString());
 
-        if(authService.checkMemberLoginCredentials(memberDTO) == true) {
+        if(authService.checkMemberLoginCredentials(memberDTO, this) == true) {
             this.showToast(this, "Login Successfully.");
+
+            Intent applicationActivity = new Intent(this, ApplicationActivity.class);
+            startActivity(applicationActivity);
         } else {
             this.showToast(this, "Invalid username or password");
         }
