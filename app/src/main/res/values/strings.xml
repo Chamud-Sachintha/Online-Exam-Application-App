@@ -3,4 +3,16 @@
     <string name="hello_regis">Hello! Register to get started</string>
     <string name="username">Username</string>
     <string name="email">Email Address</string>
+
+    <string name="country_prompt">Choose a country</string>
+    <string-array name="country_arrays">
+        <item>Malaysia</item>
+        <item>United States</item>
+        <item>Indonesia</item>
+        <item>France</item>
+        <item>Italy</item>
+        <item>Singapore</item>
+        <item>New Zealand</item>
+        <item>India</item>
+    </string-array>
 </resources>
