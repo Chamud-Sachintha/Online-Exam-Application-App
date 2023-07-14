@@ -130,6 +130,7 @@
             android:layout_width="381dp"
             android:layout_height="38dp"
             android:text="See All Applycations"
+            android:onClick="openAllApplications"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.52"

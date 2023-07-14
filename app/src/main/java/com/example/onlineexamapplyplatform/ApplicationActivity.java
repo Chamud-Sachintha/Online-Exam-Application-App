@@ -3,6 +3,7 @@ package com.example.onlineexamapplyplatform;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ArrayAdapter;
@@ -58,7 +59,7 @@ public class ApplicationActivity extends AppCompatActivity {
 
             try {
                 if (this.applicationService.createNewApplication(application, this) == true) {
-                    this.showToast(this, "Successfully.");
+                    this.showToast(this, "Successfully Apply The Application.");
                 } else {
                     this.showToast(this, "Error Occued.");
                 }
@@ -68,6 +69,11 @@ public class ApplicationActivity extends AppCompatActivity {
         } else {
             this.showToast(this, "Year & Semester Must be Filled.");
         }
+    }
+
+    public void openAllApplications(View view) {
+        Intent allApplicationActivity = new Intent(this, ApplicationList.class);
+        startActivity(allApplicationActivity);
     }
 
     public void showToast(Context context, String msg){
