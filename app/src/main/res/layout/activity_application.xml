@@ -82,7 +82,7 @@
             app:layout_constraintVertical_bias="0.6" />
 
         <EditText
-            android:id="@+id/editTextTextPersonName"
+            android:id="@+id/applicationDescription"
             android:layout_width="375dp"
             android:layout_height="127dp"
             android:background="@color/material_dynamic_neutral95"
@@ -104,6 +104,7 @@
             android:layout_width="380dp"
             android:layout_height="38dp"
             android:text="Apply Examination"
+            android:onClick="applyExamApplication"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.52"
